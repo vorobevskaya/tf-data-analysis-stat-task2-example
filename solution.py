@@ -11,8 +11,8 @@ def solution(p: float, x: np.array) -> tuple:
     # Это будет вашим решением
     # Не меняйте название функции и её аргументы
     alpha = 1 - p
-    loc = x.max()
-    low = loc
-    high = (loc-0.053)/pow(alpha, 1/len(x))+0.053
+    x_mean = x.mean()
+    low = (x_mean-0.053)/p + 0.053
+    high = (x_mean-0.053)/alpha + 0.053
     result = [low, high]
     return result
